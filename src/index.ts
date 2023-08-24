@@ -18,7 +18,7 @@ const createStore = <TStore, R extends Reducer<TStore, any>>(
 
   const getStore = () => store
 
-  const dispatch = (action: TStore | ((prev: TStore) => TStore)) => {
+  const dispatch = (action: TStore | ((prev: TStore) => TStore) | ((prev: TStore, action: any) => TStore)) => {
     const oldStore = store
 
     if (reducer) {
