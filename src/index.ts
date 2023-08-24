@@ -2,16 +2,16 @@ import { useState, useEffect } from 'react'
 import shouldUpdate from './utils/shouldUpdate'
 import isFn from './utils/isFn'
 
-type Reducer<TStore> = <TAction>(store: TStore, action: TAction) => TStore
+type Reducer<TStore, TAction> = (store: TStore, action: TAction) => TStore
 
 type Listener<TStore> = {
   mapState: (store: TStore) => TStore
   updater: React.Dispatch<React.SetStateAction<TStore>>
 }
 
-const createStore = <TStore>(
+const createStore = <TStore, R extends Reducer<TStore, any>>(
   initialStore: TStore,
-  reducer?: Reducer<TStore>
+  reducer?: R
 ) => {
   let store: TStore = initialStore
   const listeners = new Set<Listener<TStore>>()
