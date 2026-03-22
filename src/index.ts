@@ -10,7 +10,7 @@ type Listener = {
   updater: React.Dispatch<React.SetStateAction<any>>
 }
 
-const createStore = <TStore, R extends Reducer<TStore, any>>(
+export const createStore = <TStore, R extends Reducer<TStore, any>>(
   initialStore: TStore,
   reducer?: R
 ) => {
@@ -74,5 +74,3 @@ const createStore = <TStore, R extends Reducer<TStore, any>>(
 
   return [useStore, dispatch, getStore, pickStore] as const
 }
-
-export default createStore
