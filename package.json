@@ -1,6 +1,6 @@
 {
   "name": "react-superstore",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple hook to create global state in react",
   "keywords": [
     "react",
@@ -21,11 +21,11 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@types/react": "^17.0.39",
-    "typescript": "^4.5.5"
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^19.2.4"
   },
   "repository": "https://github.com/stevekanger/react-superstore.git",
   "homepage": "https://github.com/stevekanger/react-superstore.git#readme",
